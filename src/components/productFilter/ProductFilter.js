@@ -111,7 +111,7 @@ export const ProductFilter = ({ filterProducts }) => {
             />
           </label>
           <Link to="/cart">
-            <button type="button">Add To Cart</button>
+            <button type="button" className={styles.button}>Add To Cart</button>
           </Link>
         </div>
       </form>

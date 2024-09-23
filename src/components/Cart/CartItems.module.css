@@ -86,3 +86,11 @@
   font-weight: lighter;
   margin-bottom: 3px;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    overflow: auto;
+    width: 400px;
+  }
+ 
+}
