@@ -80,11 +80,11 @@
 @media screen and (max-width: 400px) {
   .container {
     overflow: auto;
-    width: 370px;
+    width: 366px;
   }
   .productsTable{
     overflow: auto;
-    width: 370px;
+    width: 366px;
   }
  
 }
