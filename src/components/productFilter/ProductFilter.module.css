@@ -7,29 +7,46 @@
   z-index: 1;
 }
 
-.left{
+.left {
   display: flex;
 }
 
-.container form {
+.hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+.filterForm {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container form .right input {
+.selectWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.resetBtn {
+  border: none;
+  color: #0275d8;
+  background-color: white;
+}
+.resetBtn .icon {
+  color: #0275d8;
+  margin-right: 2px;
+  transform: scaleX(-1);
+}
+
+.right input {
   padding: 4px 8px;
   margin-left: 0.5rem;
   background-color: #eee;
   border: 1px #ddd solid;
 }
-
-.container form .right input:hover,
-.container form .right input:focus {
-  outline: none;
-}
-
-.container form .right button {
+.right button {
   padding: 6px 20px;
   margin-left: 1rem;
   background-color: #0275d8;
@@ -38,41 +55,36 @@
   border-radius: 5px;
 }
 
-.container form .resetBtn {
-  border: none;
-  color: #0275d8;
-  background-color: white;
-}
-.container form .resetBtn .icon {
-  color: #0275d8;
-  margin-right: 2px;
-  transform: scaleX(-1);
-}
-
 @media screen and (max-width: 910px) {
-  .container form .right input {
-    padding: 4px 8px;
-    margin-left: 0.5rem;
-    background-color: #eee;
-    border: 1px #ddd solid;
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
   }
 
-  .container form .right input:hover,
-  .container form .right input:focus {
-    outline: none;
+  .right{
+    margin-top: 10px;
+  }
+  .filterForm {
+    display: none; /* Hide filter form by default on mobile */
+    align-items: normal;
   }
 
-  .container form .right button {
+  .filterForm.show {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .selectWrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .right button {
     padding: 6px 10px;
     margin-left: 0.5rem;
     background-color: #0275d8;
     color: #fff;
     border: none;
     border-radius: 5px;
-  }
-  .selectWrapper{
-    display: flex;
-    gap: .5rem;
-    flex-direction: column;
   }
 }

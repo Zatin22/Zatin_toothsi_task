@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ProductFilter.module.css";
 import { IoIosRefresh } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi"; // Import hamburger icon
 
 import { useProducts } from "../../store/ProductContext";
 import { Link } from "react-router-dom";
@@ -13,6 +14,7 @@ export const ProductFilter = ({ filterProducts }) => {
     price: "",
     search: "",
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -26,6 +28,10 @@ export const ProductFilter = ({ filterProducts }) => {
       price: "",
       search: "",
     });
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen); // Toggle mobile menu visibility
   };
 
   useEffect(() => {
@@ -54,7 +60,13 @@ export const ProductFilter = ({ filterProducts }) => {
 
   return (
     <section className={styles.container}>
-      <form>
+      {/* Hamburger button for mobile */}
+      <button className={styles.hamburger} onClick={toggleMobileMenu}>
+        <GiHamburgerMenu />
+      </button>
+
+      {/* Filter form - toggle visibility based on state */}
+      <form className={`${styles.filterForm} ${isMobileMenuOpen ? styles.show : ''}`}>
         <div className={styles.left}>
           <div className={styles.selectWrapper}>
             <select
@@ -72,7 +84,6 @@ export const ProductFilter = ({ filterProducts }) => {
               })}
             </select>
             <select name="price" onChange={handleChange} value={filters.price}>
-              {/* <option value="">All</option> */}
               <option value="">Price</option>
               <option value="1000">less than $1000</option>
               <option value="100">less than $100</option>
