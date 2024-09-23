@@ -65,9 +65,8 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 330px) {
   .container {
-    padding-top: 4rem;
     overflow: auto;
     width: 319px;
   }
@@ -75,4 +74,17 @@
     overflow: auto;
     width: 319px;
   }
+ 
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    overflow: auto;
+    width: 370px;
+  }
+  .productsTable{
+    overflow: auto;
+    width: 370px;
+  }
+ 
 }
