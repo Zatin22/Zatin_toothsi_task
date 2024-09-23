@@ -2,7 +2,7 @@
   margin: 25px auto;
   padding: 1rem;
   border: 1px solid #bbb;
-  min-width: 350px;
+  /* min-width: 350px; */
   max-width: fit-content;
 }
 .card h1 {

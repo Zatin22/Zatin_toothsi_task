@@ -48,7 +48,7 @@ export const ProductTable = () => {
   ) : sortedProducts.length === 0 ? (
     <p>There is no product with current filter please reset.</p>
   ) : (
-    <table className={styles.productsTable}>
+    <table style={{width:"400px",overflow:"auto"}} className={styles.productsTable}>
       <thead>
         <tr>
           <th>Image</th>

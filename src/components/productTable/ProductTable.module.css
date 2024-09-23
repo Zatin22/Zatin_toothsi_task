@@ -69,10 +69,10 @@
   .container {
     padding-top: 4rem;
     overflow: auto;
-    width: 400px;
+    width: 300px;
   }
   .productsTable{
     overflow: auto;
-    width: 400px;
+    width: 300px;
   }
 }
