@@ -74,7 +74,9 @@ export const ProductTable = () => {
   return (
     <>
       <ProductFilter filterProducts={handleFilterProducts} />
-      <section className={styles.container}>{content}</section>
+      <section className={styles.container}>
+        {content}
+        </section>
       {sortedProducts.length > 0 && <Pagination />}
     </>
   );
