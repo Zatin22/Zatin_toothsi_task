@@ -19,6 +19,7 @@ export const ProductFilter = ({ filterProducts }) => {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setFilters({ ...filters, [name]: value });
   };
 
